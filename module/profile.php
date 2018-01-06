@@ -11,9 +11,12 @@
 	 
 	
 ?>
-<h1 style="color:#060" ><?php echo $r['name']?></h1>
 <div align="center">
-<img  src="Admin/Users/<?php echo $r['photo']?>" height="300px" width="300px" style="border-radius:50%">
+<h1 style="color:#060" ><?php echo $r['name']?></h1>
+</div>
+
+<div align="center">
+<img  src="Users/<?php echo $r['photo']?>" height="300px" width="300px" style="border-radius:50%">
 </div>
 <br><br>
 <style>
@@ -44,7 +47,7 @@ h2
 </table>
 
 <div>
-<h2 style="color:red">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transaction History</h2>
+<h2 style="color:red"><br /><br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Transaction History</h2>
 <?php 
 $iid=$r['id'];
 $select="SELECT * FROM  `sold_product` WHERE  `user_id` =$iid ORDER BY `b_date` DESC";
@@ -62,7 +65,7 @@ $select="SELECT * FROM  `sold_product` WHERE  `user_id` =$iid ORDER BY `b_date` 
         <table cellspacing="0" cellpadding="0"> 
         <tr >
         		<td widtd="80px" align="center"> <?php echo ++$count; ?> </td>
-        		<td><br /><a target="new" href="Admin/images/<?php echo $pp['image'] ?>"><img src="Admin/images/<?php echo $pp['image'] ?>" height="180px" widtd="180 px" /></a><br />
+        		<td><br /><a target="new" href="images/<?php echo $pp['image'] ?>"><img src="images/<?php echo $pp['image'] ?>" height="180px" widtd="180 px" /></a><br />
                 <font style="text-align:center; color:red;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $pp['name'];?></font>
                 <br /></td>
                 <td widtd="400px">
@@ -75,12 +78,11 @@ $select="SELECT * FROM  `sold_product` WHERE  `user_id` =$iid ORDER BY `b_date` 
                     <tr><th>Card_no</td><td><?php echo $r['card_no']?></td></tr>
                     <tr><th>shopping date</td><td><?php echo $r['b_date']?></td></tr>
                     <tr><th>ship date</td><td><?php echo $r['s_date']?></td></tr>
-                    
                     </table>
                 </td>
         
         <th align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a href="index.php?page=bill&value=<?php echo $r['ID'] ?>" target="_blank"><button style="width:200px; height:50px; color:green; border-radius:10px; font-size:16px"><b> Print Invoice </b></button></a>
+        <a href="../index.php?page=bill&value=<?php echo $r['ID'] ?>" target="_blank"><button style="width:200px; height:50px; color:green; border-radius:10px; font-size:16px"><b> Print Invoice </b></button></a>
         
         </th>
         </tr>
