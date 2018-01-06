@@ -1,26 +1,14 @@
 <?php
 
 error_reporting(0);
+include('view.php');
 $pages=$_GET['page'];
-if(strcmp($pages,"bill")==0)
-{
-		include('module/'.$pages.'.php');
-}
-else if($pages)
-{
-	
-include('module/header.php');
-	include('module/'.$pages.'.php');
 
-include('module/footer.php');
+if($pages)
+{
+	include('module/'.$pages.'.php');
 }
 else
-{
-	include('module/header.php');
-
-	include('module/div2.php');
-	
-include('module/footer.php');
-}
-
+	include('module/profile.php');
+include('module/dashboard.php');
 ?>
